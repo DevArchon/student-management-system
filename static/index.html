@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Management System</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <h1><i class="fas fa-graduation-cap"></i> Student Management System</h1>
+        <div class="header-actions">
+          <button class="btn btn-primary" onclick="showAddStudentModal()">
+            <i class="fas fa-plus"></i> Add Student
+          </button>
+          <button class="btn btn-secondary" onclick="exportData()">
+            <i class="fas fa-download"></i> Export CSV
+          </button>
+        </div>
+      </header>
+
+      <!-- Statistics Cards -->
+      <div class="stats-container" id="statsContainer">
+        <!-- Stats will be populated by JavaScript -->
+      </div>
+
+      <!-- Filters and Search -->
+      <div class="filters">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search students..."
+          />
+        </div>
+        <div class="filter-controls">
+          <select id="honorsFilter" onchange="filterStudents()">
+            <option value="">All Honors</option>
+            <option value="A">A Grade</option>
+            <option value="B">B Grade</option>
+            <option value="C">C Grade</option>
+            <option value="D">D Grade</option>
+            <option value="F">F Grade</option>
+          </select>
+          <input
+            type="number"
+            id="minAvgFilter"
+            placeholder="Min Average"
+            min="0"
+            max="100"
+            step="0.1"
+            onchange="filterStudents()"
+          />
+        </div>
+      </div>
+
+      <!-- Students Table -->
+      <div class="table-container">
+        <table class="students-table" id="studentsTable">
+          <thead>
+            <tr>
+              <th>Student ID</th>
+              <th>Name</th>
+              <th>Grades</th>
+              <th>Average</th>
+              <th>Honors</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="studentsTableBody">
+            <!-- Students will be populated by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Add/Edit Student Modal -->
+    <div id="studentModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="modalTitle">Add New Student</h2>
+          <span class="close" onclick="closeModal()">&times;</span>
+        </div>
+        <form id="studentForm" onsubmit="handleStudentSubmit(event)">
+          <div class="form-group">
+            <label for="studentId">Student ID:</label>
+            <input type="text" id="studentId" name="studentId" required />
+          </div>
+          <div class="form-group">
+            <label for="studentName">Name:</label>
+            <input type="text" id="studentName" name="studentName" required />
+          </div>
+          <div class="form-group">
+            <label>Grades:</label>
+            <div id="gradesContainer">
+              <div class="grade-row">
+                <input
+                  type="text"
+                  placeholder="Subject"
+                  class="grade-subject"
+                />
+                <input
+                  type="number"
+                  placeholder="Score"
+                  class="grade-score"
+                  min="0"
+                  max="100"
+                  step="0.1"
+                />
+                <button
+                  type="button"
+                  class="btn btn-danger btn-sm"
+                  onclick="removeGradeRow(this)"
+                >
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+            </div>
+            <button
+              type="button"
+              class="btn btn-secondary btn-sm"
+              onclick="addGradeRow()"
+            >
+              <i class="fas fa-plus"></i> Add Grade
+            </button>
+          </div>
+          <div class="form-actions">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              onclick="closeModal()"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary">Save Student</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Add Grade Modal -->
+    <div id="gradeModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Add Grade</h2>
+          <span class="close" onclick="closeGradeModal()">&times;</span>
+        </div>
+        <form id="gradeForm" onsubmit="handleGradeSubmit(event)">
+          <div class="form-group">
+            <label for="gradeSubject">Subject:</label>
+            <input type="text" id="gradeSubject" name="gradeSubject" required />
+          </div>
+          <div class="form-group">
+            <label for="gradeScore">Score:</label>
+            <input
+              type="number"
+              id="gradeScore"
+              name="gradeScore"
+              min="0"
+              max="100"
+              step="0.1"
+              required
+            />
+          </div>
+          <div class="form-actions">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              onclick="closeGradeModal()"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary">Add Grade</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>

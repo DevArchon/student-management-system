@@ -1,0 +1,23 @@
+2025-06-22 23:10:45 - Student: Alice Smith (S001), Action: ADD/UPDATE, Subject: Math, Score: 95
+2025-06-22 23:10:45 - Student: Alice Smith (S001), Action: ADD/UPDATE, Subject: Science, Score: 92
+2025-06-22 23:10:45 - Student: Bob Johnson (S002), Action: ADD/UPDATE, Subject: Math, Score: 85
+2025-06-22 23:10:45 - Student: Bob Johnson (S002), Action: ADD/UPDATE, Subject: Science, Score: 88
+2025-06-22 23:20:23 - Student: Alice Smith (S001), Action: ADD/UPDATE, Subject: Math, Score: 95
+2025-06-22 23:20:23 - Student: Alice Smith (S001), Action: ADD/UPDATE, Subject: Science, Score: 92
+2025-06-22 23:20:23 - Student: Bob Johnson (S002), Action: ADD/UPDATE, Subject: Math, Score: 85
+2025-06-22 23:20:23 - Student: Bob Johnson (S002), Action: ADD/UPDATE, Subject: Science, Score: 88
+2025-06-23 03:17:38 - Student: Alice Smith (S001), Action: ADD/UPDATE, Subject: Math, Score: 95
+2025-06-23 03:17:38 - Student: Alice Smith (S001), Action: ADD/UPDATE, Subject: Science, Score: 92
+2025-06-23 03:17:38 - Student: Bob Johnson (S002), Action: ADD/UPDATE, Subject: Math, Score: 85
+2025-06-23 03:17:38 - Student: Bob Johnson (S002), Action: ADD/UPDATE, Subject: Science, Score: 88
+2025-06-23 03:18:33 - Student: Alice Smith (S001), Action: ADD/UPDATE, Subject: Math, Score: 95
+2025-06-23 03:18:33 - Student: Alice Smith (S001), Action: ADD/UPDATE, Subject: Science, Score: 92
+2025-06-23 03:18:33 - Student: Bob Johnson (S002), Action: ADD/UPDATE, Subject: Math, Score: 85
+2025-06-23 03:18:33 - Student: Bob Johnson (S002), Action: ADD/UPDATE, Subject: Science, Score: 88
+2025-06-23 03:32:34 - Student: Ahsan (1093), Action: ADD/UPDATE, Subject: English, Score: 75
+2025-06-23 03:33:25 - Student: Ahsan (1093), Action: ADD/UPDATE, Subject: English, Score: 91
+2025-06-23 05:07:04 - Student: Ahsan (S001), Action: ADD/UPDATE, Subject: English, Score: 95
+2025-06-23 05:07:04 - Student: Ahsan (S001), Action: ADD/UPDATE, Subject: Maths, Score: 97
+2025-06-23 05:07:04 - Student: Ahsan (S001), Action: ADD/UPDATE, Subject: Physics, Score: 85
+2025-06-23 05:07:04 - Student: Ahsan (S001), Action: ADD/UPDATE, Subject: Chemistry, Score: 99
+2025-06-23 05:15:42 - Student: Ahsan (S001), Action: ADD/UPDATE, Subject: Urdu, Score: 85
