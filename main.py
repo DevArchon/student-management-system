@@ -6,7 +6,7 @@ from models import StudentManager
 from typing import List, Dict, Any
 import os
 
-# Create the StudentManager instance
+
 manager = StudentManager()
 
 
@@ -14,20 +14,10 @@ manager = StudentManager()
 async def lifespan(app: FastAPI):
     # Startup logic
     try:
-        # alice = manager.add_student("Alice Smith", "S001")
-        # alice.add_grade("Math", 95)
-        # alice.add_grade("Science", 92)
-
-        # bob = manager.add_student("Bob Johnson", "S002")
-        # bob.add_grade("Math", 85)
-        # bob.add_grade("Science", 88)
-
         manager.export_to_csv("students.csv")
     except Exception as e:
         print(f"Error during startup: {e}")
     yield
-    # Shutdown logic (optional)
-    # (e.g., close database connections)
 
 
 app = FastAPI(lifespan=lifespan, title="Student Management System", version="1.0.0")
@@ -256,16 +246,6 @@ async def export_students():
         return {"message": "Students exported to CSV successfully"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Export failed: {str(e)}")
-
-
-# @app.get("/api/health")
-# async def health_check():
-#     """Health check endpoint"""
-#     return {
-#         "status": "healthy",
-#         "total_students": len(manager.students),
-#         "timestamp": "2024-01-01T00:00:00Z"
-#     }
 
 
 if __name__ == "__main__":
